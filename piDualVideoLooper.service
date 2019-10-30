@@ -1,0 +1,10 @@
+[Unit]
+Description=Pi Dual Video Looper
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/piDualVideoLooper/piDualVideoLooper.sh
+
+[Install]
+WantedBy=multi-user.target
