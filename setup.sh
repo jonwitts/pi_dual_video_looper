@@ -18,17 +18,17 @@ apt-get dist-upgrade -y
 # install our required packages
 echo "Installing dependencies..."
 echo "=========================="
-apt-get install wget omxplayer util-linux usbmount python3 -y
+apt-get install wget omxplayer util-linux python3 -y
 apt-get install python3-gpiozero -y
 # include exFAT support
 apt-get install exfat-fuse exfat-utils -y
 
 # Configure USBMount for Stretch / Buster??
 # from https://vivekanandxyz.wordpress.com/2017/12/29/detecting-and-automatically-mounting-pendrive-on-raspbian-stretch-lite/
-echo "Configure USBMount..."
-echo "=========================="
-sed -i '/MountFlags=slave/c\MountFlags=shared' /lib/systemd/system/systemd-udevd.service
-systemctl daemon-reload
+# echo "Configure USBMount..."
+# echo "=========================="
+# sed -i '/MountFlags=slave/c\MountFlags=shared' /lib/systemd/system/systemd-udevd.service
+# systemctl daemon-reload
 
 # copy our bash script
 echo "Install our piDualVideoLooper script..."
