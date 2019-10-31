@@ -55,8 +55,10 @@ systemctl daemon-reload
 systemctl enable piDualVideoLooper.service
 systemctl enable pythonShutdown.service
 
-# hide our user prompt
+# hide our user prompt and clear the screen at start up
 echo 'PS1=""' >> /home/pi/.bashrc
+echo "setterm --cursor off" >> /home/pi/.bashrc
+echo "clear" >> /home/pi/.bashrc
 
 # done
 echo "Done. Rebooting now"
