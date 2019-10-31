@@ -19,4 +19,4 @@ This is configured to remove all terminal prompts from your pi, so you will just
 
 Tested against Raspbain Buster Lite.
 
-<img src="pythonPlayShutdownWiring_bb.png" alt="Wiring diagram for the python play and shutdown script" width="50%" height="50%" />
+<img src="pythonShutdownWiring_bb.png" alt="Wiring diagram for the python shutdown script" width="50%" height="50%" />
