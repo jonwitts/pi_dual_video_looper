@@ -8,24 +8,23 @@
 # A Bash Dual Video Looper for the Raspberry Pi 4 and a Python3 shutdown button and LED indicator
 # https://github.com/jonwitts/pi_dual_video_looper
 
-# first find the first attached USB drive
-# scan in reverse order to find the first!
-mounts=( "/media/usb7" "/media/usb6" "/media/usb5" "/media/usb4" "/media/usb3" "/media/usb2" "/media/usb1" "/media/usb0" "/media/usb")
-usbmount=""
-for i in "${mounts[@]}"
-do
-    if mountpoint -q $i; then
-        usbmount=$i
-    fi
-done
+# stop the cursor blinking and clear the screen
+setterm --cursor off
+clear
+
+# we assume that there is one USB drive attached at /dev/sda1
+pmount -r /dev/sda1 > /dev/null 2>&1
 
 # now play the 2 video files, looping it with bash
 # files need to be named as below...
-# left.mp4 will output on HDMI0 --display 2
-# right.mp4 will output on HDMI1 --display 7
+# hdmi0.mp4 will output on HDMI0 --display 2
+# hdmo1.mp4 will output on HDMI1 --display 7
 # As labelled on the Pi4 board
+# Both audio tracks will output to the audio jack
+# probably best to only have audio on one video track!
+
 while true
 do
-    omxplayer -b --adev local --display 2 $usbmount/left.mp4 &
-    omxplayer -b --adev local --display 7 $usbmount/right.mp4
+    omxplayer -b --adev local --display 2 /media/sda1/hdmi0.mp4 > /dev/null 2>&1 &
+    omxplayer -b --adev local --display 7 /media/sda1/hdmi1.mp4 > /dev/null 2>&1
 done
