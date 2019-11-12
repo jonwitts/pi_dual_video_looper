@@ -60,6 +60,9 @@ echo 'PS1=""' >> /home/pi/.bashrc
 echo "setterm --cursor off" >> /home/pi/.bashrc
 echo "clear" >> /home/pi/.bashrc
 
+# up our GPU RAM
+echo "gpu_mem=512" >> /boot/config.txt
+
 # done
 echo "Done. Rebooting now"
 echo "=========================="
