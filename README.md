@@ -1,5 +1,5 @@
 # Dual Video Looper for the Raspberry Pi 4
-A shell script dual video looper for the Raspberry Pi 4, making use of teh dual HDMI outputs and using omxplayer to run teh videos from a USB drive. Also includes a Python3 shutdown button and LED indicator
+A shell script dual video looper for the Raspberry Pi 4, making use of the dual HDMI outputs and using omxplayer to run the videos from a USB drive. Also includes a Python3 shutdown button and LED indicator
 
 To install either clone this repo to a Raspberry Pi with wifi setup on it and run setup.sh as root, or run this command:
 
